@@ -3,6 +3,8 @@ import random
 print 'Welcome to the random number guessing game!'
 
 
+print "hello there."
+
 def pick_random_number():
     our_number = random.randint(1, 100)
 
