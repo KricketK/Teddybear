@@ -3,7 +3,7 @@ import random
 print 'Welcome to the random number guessing game!'
 
 
-print "hello there."
+print "Too bad. So sad."
 
 def pick_random_number():
     our_number = random.randint(1, 100)
