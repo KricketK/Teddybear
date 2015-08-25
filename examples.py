@@ -70,15 +70,17 @@ class Die:
 
     def roll(self):
         randint = random.randint(1, self.sides)
-        print "this die rolled a ", randint
-        if self.loaded_die():
-            return 1
-        else
-            return randint
+        print "I rolled a ", randint, "on a ", self.sides, "'d die"
+        return randint
 
-    def loaded_die(self):
-        return true
 
+class D6(Die):
+    def __init__(self):
+        Die.__init__(self, 6)
+
+class D20(Die):
+    def __init__(self):
+        Die.__init__(self, 20)
 
 class Game:
 
