@@ -50,3 +50,53 @@ class Cat:
             print "MY NAME IS", self.name.upper()
         else:
             print "my name is", self.name
+
+import random
+
+class Bank:
+    def __init__(self, starting_tokens):
+        self.total = starting_tokens
+
+    def add_tokens(self, amount):
+        self.total += amount
+
+    def sub_tokens(self, amount):
+        self.total -= amount
+
+
+class Die:
+    def __init__(self, sides):
+        self.sides = sides
+
+    def roll(self):
+        randint = random.randint(1, self.sides)
+        print "this die rolled a ", randint
+        if self.loaded_die():
+            return 1
+        else
+            return randint
+
+    def loaded_die(self):
+        return true
+
+
+class Game:
+
+    bank = None
+    dice = None
+    players = []
+
+    def __init__(self, starting_bank, num_of_die):
+        self.bank = Bank(starting_bank)
+
+        self.dice = [Die(6) for die in range(num_of_die)]
+
+    def roll(self):
+        total = 0
+
+        for die in self.dice:
+            roll = die.roll()
+
+            total += roll
+
+        print total

@@ -1,3 +1,5 @@
+from examples import Bank
+
 __author__ = 'KRISTINE'
 import random
 
@@ -9,10 +11,12 @@ answer = raw_input("Do you want to play a game?")
 
 raw_input("So sweet. Isn't it fun pretending to have freedom of choice?")
 
-token_start = 20
+
+token_bank = Bank(20)
 
 token_phrase = "I see you have %d tokens. When you double that number, you can leave."
-print token_phrase % token_start
+print token_phrase % token_bank.total
+
 raw_input("For each correct guess, you will earn twice as much as you bet.")
 print "\nGo ahead. All you have to do is roll the die anc call your number.\n"
 
@@ -51,7 +55,7 @@ while place_bets:
         print "Something must be risked for something to be gained."
     if bet > token_start:
         print "One cannot risk what they do not have."
-    if 0 < bet < (token_start + 1):
+    if 0 < bet < (token_bank.add_tokens(1)):
         place_bets = False
         roll_again = True
 
