@@ -42,13 +42,14 @@ while place_bets:
         bet = int(bet)
     except ValueError:
         print "This is no game to bet words on."
-    if bet < 1:
-        print "Something must be risked for something to be gained."
-    if bet > token_start:
-        print "One cannot risk what they do not have."
-    if 0 < bet < (token_start + 1):
-        place_bets = False
-        roll_again = True
+    else
+        if bet < 1:
+            print "Something must be risked for something to be gained."
+        elif bet > token_start:
+            print "One cannot risk what they do not have."
+        elif 0 < bet < (token_start + 1):
+            place_bets = False
+            roll_again = True
 
 dice_roll = roll_the_dice()
 
