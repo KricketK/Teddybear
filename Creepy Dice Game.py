@@ -1,6 +1,10 @@
 __author__ = 'KRISTINE'
 import random
 
+stryder = Cat('stryder', 'organge', 14)
+todd = Cat('stryder', 'organge', 4)
+
+
 answer = raw_input("Do you want to play a game?")
 
 raw_input("So sweet. Isn't it fun pretending to have freedom of choice?")
@@ -16,6 +20,7 @@ print "\nGo ahead. All you have to do is roll the die anc call your number.\n"
 def roll_the_dice():
     final_roll = random.randint(1, 6)
     return final_roll
+
 
 roll_again = False
 go_ahead = True
@@ -59,7 +64,7 @@ reward = bet
 loss = bet
 
 if dice_roll == int(guess):
-    total_tokens = 2*(int(reward)) + int(token_start)
+    total_tokens = 2 * (int(reward)) + int(token_start)
 
 if dice_roll < int(guess):
     total_tokens = int(token_start) - int(loss)
@@ -120,7 +125,7 @@ while roll_again:
         loss = bet
 
         if dice_roll == int(guess):
-            total_tokens = 2*(int(reward)) + int(total_tokens)
+            total_tokens = 2 * (int(reward)) + int(total_tokens)
 
         if dice_roll < int(guess):
             total_tokens = int(total_tokens) - int(loss)
