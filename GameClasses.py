@@ -22,3 +22,4 @@ class Die:
     def roll(self):
         x = random.randint(1, self.faces)
         return x
+
