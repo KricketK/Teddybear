@@ -1,6 +1,8 @@
 __author__ = 'KRISTINE'
 import random
 
+from GameClasses import Die
+
 answer = raw_input("Do you want to play a game?")
 
 raw_input("So sweet. Isn't it fun pretending to have freedom of choice?")
@@ -11,10 +13,6 @@ token_phrase = "I see you have %d tokens. When you double that number, you can l
 print token_phrase % token_start
 raw_input("For each correct guess, you will earn twice as much as you bet.")
 print "\nGo ahead. All you have to do is roll the die anc call your number.\n"
-
-
-
-
 
 roll_again = False
 go_ahead = True
@@ -49,7 +47,15 @@ while place_bets:
         place_bets = False
         roll_again = True
 
-dice_roll = roll_the_dice()
+starting_dice = [Die(6), Die(6)]
+
+def roll_the_dice(dice):
+    x = 0
+    for each in dice:
+        x += each.roll()
+    return x
+
+dice_roll = roll_the_dice(starting_dice)
 
 some_phrase = "\nThe hooded person behind the counter rolls the dice. You see %d on the table\n"
 print some_phrase % dice_roll
