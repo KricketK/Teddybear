@@ -1,23 +1,6 @@
 __author__ = 'KRISTINE'
 import random
 
-stryder = Cat('stryder', 'organge', 14)
-todd = Cat('stryder', 'organge', 4)
-
-class Bank:
-    def __init__(self, starting_tokens):
-        self.total = starting_tokens
-
-    def add_tokens(self, amount):
-        self.total += amount
-
-    def subtract_tokens(self, amount):
-        self.total -= amount
-
-class Game:
-    bank = bank(20)
-    dice = dice(2)
-
 answer = raw_input("Do you want to play a game?")
 
 raw_input("So sweet. Isn't it fun pretending to have freedom of choice?")
@@ -30,9 +13,7 @@ raw_input("For each correct guess, you will earn twice as much as you bet.")
 print "\nGo ahead. All you have to do is roll the die anc call your number.\n"
 
 
-def roll_the_dice():
-    final_roll = random.randint(1, 6)
-    return final_roll
+
 
 
 roll_again = False
