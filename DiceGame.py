@@ -1,5 +1,6 @@
+from GameClasses import Die, KrickettDie, Shaker
+
 __author__ = 'KRISTINE'
-import random
 
 answer = raw_input("Do you want to play a game?")
 
@@ -11,9 +12,6 @@ token_phrase = "I see you have %d tokens. When you double that number, you can l
 print token_phrase % token_start
 raw_input("For each correct guess, you will earn twice as much as you bet.")
 print "\nGo ahead. All you have to do is roll the die anc call your number.\n"
-
-
-
 
 
 roll_again = False
@@ -49,7 +47,19 @@ while place_bets:
         place_bets = False
         roll_again = True
 
-dice_roll = roll_the_dice()
+fair_dice = [Die(6), Die(6)]
+loaded_dice = [KrickettDie(6), KrickettDie(6)]
+
+
+def roll_the_dice(dice):
+    x = 0
+    for each in dice:
+        x += each.roll()
+    return x
+
+fair_shaker = Shaker([KrickettDie(6), KrickettDie(6), KrickettDie(7)])
+
+dice_roll = fair_shaker.roll()
 
 some_phrase = "\nThe hooded person behind the counter rolls the dice. You see %d on the table\n"
 print some_phrase % dice_roll
@@ -110,7 +120,7 @@ while roll_again:
             if 0 < bet < (total_tokens + 1):
                 place_bets = False
 
-        dice_roll = roll_the_dice()
+        dice_roll = roll_the_dice(loaded_dice)
 
         some_phrase = "\nThe hooded person behind the counter rolls the dice. You see %d on the table\n"
         print some_phrase % dice_roll
